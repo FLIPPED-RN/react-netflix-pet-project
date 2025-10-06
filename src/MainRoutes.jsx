@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App";
 import { MovieDetails } from "./MovieDetails";
 
@@ -7,12 +7,12 @@ export function MainRoutes(){
     <Router>
       <Routes>
         <Route 
-          path="/"
-          element={App}
+          path='/'
+          element={<App />}
         />
         <Route 
-          path="/movie/:id"
-          element={MovieDetails}
+          path='/movie/:id'
+          element={<MovieDetails />}
         />
       </Routes>
     </Router>

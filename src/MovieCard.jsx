@@ -46,9 +46,9 @@ export function MovieCard({ image, rating, trailerYoutubeId }) {
           🎥
         </button>
 
-        <Link 
-          
-        />
+       <Link to={`/movie/${trailerYoutubeId}` } className="btn">
+        🔗
+       </Link>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 text-sm text-white font-semibold ">
