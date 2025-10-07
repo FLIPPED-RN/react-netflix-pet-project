@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
-import { MOVIES } from "./movies.data"
-import { useMemo } from "react"
+import { MOVIES } from "../home/movies.data"
+import { lazy, Suspense, useMemo } from "react"
+
+const LazyMovieComments = lazy(() => import('./MovieComments'))
 
 export function MovieDetails(){
   
@@ -21,6 +23,10 @@ export function MovieDetails(){
         <p className="text-sm text-gray-400">IMDb: {movie.rating}</p>
 
         <p className="text-gray-300 text-sm">Краткое описание фильма. Здесь можно добавить жанр и т.п. Бла бла бла бла эт NETFLIX</p>
+
+        <Suspense fallback={<div>Загрузка...</div>}>
+          <LazyMovieComments />
+        </Suspense>
       </div>
     </div>
   )

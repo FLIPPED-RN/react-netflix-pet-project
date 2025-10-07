@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
-import FavoriteButton from "./FavoriteButton";
-import { Modal } from "./components/ui/Modal";
 import { Link } from "react-router-dom";
+import FavoriteButton from "./FavoriteButton";
+import { Modal } from "../../ui/Modal";
 
 export function MovieCard({ image, rating, trailerYoutubeId }) {
 
@@ -37,7 +37,7 @@ export function MovieCard({ image, rating, trailerYoutubeId }) {
       />
 
       <div className="absolute top-2 right-2 z-10 flex gap-2">
-        <FavoriteButton  />
+        <FavoriteButton />
 
         <button 
           onClick={openTrailer}
