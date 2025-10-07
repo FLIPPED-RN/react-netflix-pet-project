@@ -15,9 +15,9 @@ function App() {
   }, [debouncedSearch])
   
   return (
-    <div className='min-h-screen w-full bg-white dark:bg-black text-black dark:text-white px-6 py-5'>
+    <div>
       <header className='mb-10 flex items-center justify-between'>
-        <div className="text-3xl font-bold ">
+        <div className="text-3xl font-bold text-red-600">
           Netflix
         </div>
 

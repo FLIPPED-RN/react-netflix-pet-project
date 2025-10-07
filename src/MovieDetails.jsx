@@ -13,7 +13,7 @@ export function MovieDetails(){
   if(!movie) return <p className="text-center mt-10 text-gray-400">Фильм не найден :(</p>
 
   return(
-    <div className="min-h-screen px-6 py-10 bg-black text-white">
+    <div>
       <img src={movie.image} alt="Карточка фильма" className="w-2/3 md:1/3 rounded-xl shadow-lg object-cover"/>
 
       <div className="flex-1 space-y-4">
