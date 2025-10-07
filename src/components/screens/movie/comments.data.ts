@@ -1,4 +1,6 @@
-export const COMMENTS = [
+import { IComment } from "./comments.interface";
+
+export const COMMENTS: IComment[] = [
   {
     id: 1,
     name: 'Данила',

@@ -2,8 +2,13 @@ import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 import { Modal } from "../../ui/Modal";
+import { IMovie } from "./movie.interface";
 
-export function MovieCard({ image, rating, trailerYoutubeId }) {
+interface Props {
+  movie: IMovie
+}
+
+export function MovieCard({ movie }: Props) {
 
   const [isOpenTrailer, setIsOpenTrailer] = useState(false)
 
@@ -22,16 +27,15 @@ export function MovieCard({ image, rating, trailerYoutubeId }) {
           <iframe 
             width="560" 
             height="315" 
-            src={`https://www.youtube.com/embed/${trailerYoutubeId}?amp;controls=0`}
+            src={`https://www.youtube.com/embed/${movie.trailerYoutubeId}?amp;controls=0`}
             title="YouTube video player" 
-            frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
+            referrerPolicy="strict-origin-when-cross-origin" 
+            allowFullScreen></iframe>
         </Modal>)}
 
       <img
-        src={image}
+        src={movie.image}
         alt="Movie Poster"
         className="w-full h-auto object-cover"
       />
@@ -46,13 +50,13 @@ export function MovieCard({ image, rating, trailerYoutubeId }) {
           🎥
         </button>
 
-       <Link to={`/movie/${trailerYoutubeId}` } className="btn">
+       <Link to={`/movie/${movie.trailerYoutubeId}` } className="btn">
         🔗
        </Link>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 text-sm text-white font-semibold ">
-        IMDb: {rating}
+        IMDb: {movie.rating}
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
-export const MOVIES = [
+import { IMovie } from "./movie.interface";
+
+export const MOVIES: IMovie[] = [
   {
     name: 'house of cards',
     image: '/image1.jpg',

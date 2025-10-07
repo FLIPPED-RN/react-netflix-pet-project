@@ -4,7 +4,7 @@ import './index.css'
 import { ThemeProvider } from './ThemeProvider.jsx'
 import { MainRoutes } from './MainRoutes.jsx'
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
       <MainRoutes />
